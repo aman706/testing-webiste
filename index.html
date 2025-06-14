@@ -57,7 +57,7 @@
   </section>
 
   <!-- Services Section -->
-  <section id="services" class="section">
+  <section id="services" class="section anchor-offset">
     <h3>Our Services</h3>
     <div class="service-grid">
       <div class="service">
@@ -100,13 +100,15 @@
   <!-- Contact Section -->
   <section id="contact" class="contact">
     <h3>Get in Touch</h3>
-    <form id="contactForm">
-      <input type="text" id="name" placeholder="Your Name" required />
-      <input type="email" id="email" placeholder="Your Email" required />
-      <textarea id="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
-    </form>
-    <p id="form-status"></p>
+    <div class="form-wrapper">
+      <form id="contactForm">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="email" id="email" placeholder="Your Email" required />
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+      <p id="form-status"></p>
+    </div>
   </section>
 
   <!-- Footer -->
