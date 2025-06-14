@@ -1,33 +1,32 @@
-// Smooth scroll with offset for fixed navbars
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
+// Smooth scroll for navigation links
+document.querySelectorAll("nav a").forEach(anchor => {
+  anchor.addEventListener("click", function (e) {
     e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      const offsetTop = target.offsetTop - 100; // Adjust for top-nav + navbar height
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth'
-      });
-    }
+    const targetID = this.getAttribute("href");
+    const section = document.querySelector(targetID);
+    section.scrollIntoView({ behavior: "smooth" });
   });
 });
 
-// Contact form submission handler
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const message = document.getElementById('message').value.trim();
-  const status = document.getElementById('form-status');
-  
-  if (name && email && message) {
-    status.textContent = "Thank you! We'll get back to you soon.";
-    status.style.color = "green";
-    this.reset();
-  } else {
-    status.textContent = "Please fill out all fields.";
-    status.style.color = "red";
-  }
+// Fade in animation on scroll
+const faders = document.querySelectorAll("section");
+
+const appearOptions = {
+  threshold: 0.3,
+  rootMargin: "0px 0px -50px 0px"
+};
+
+const appearOnScroll = new IntersectionObserver(function (
+  entries,
+  observer
+) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add("visible");
+    observer.unobserve(entry.target);
+  });
+}, appearOptions);
+
+faders.forEach(section => {
+  appearOnScroll.observe(section);
 });
