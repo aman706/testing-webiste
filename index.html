@@ -93,27 +93,27 @@
           <h3>Brand One</h3>
           <p>High-efficiency solar panels trusted worldwide.</p>
         </div>
-        <div class="brand-card">
+        <div class="card">
           <img src="images/brands/logo2.png" alt="Brand 2" />
           <h3>Brand Two</h3>
           <p>Innovative solar solutions with 25-year warranty.</p>
         </div>
-        <div class="brand-card">
+        <div class="card">
           <img src="images/brands/logo3.png" alt="Brand 3" />
           <h3>Brand Three</h3>
           <p>Reliable performance in all weather conditions.</p>
         </div>
-        <div class="brand-card">
+        <div class="card">
           <img src="images/brands/logo4.png" alt="Brand 4" />
           <h3>Brand Four</h3>
           <p>Affordable solar technology for everyday use.</p>
         </div>
-        <div class="brand-card">
+        <div class="card">
           <img src="images/brands/logo5.png" alt="Brand 5" />
           <h3>Brand Five</h3>
           <p>Durable panels designed for harsh environments.</p>
         </div>
-        <div class="brand-card">
+        <div class="card">
           <img src="images/brands/logo6.png" alt="Brand 6" />
           <h3>Brand Six</h3>
           <p>Trusted solar brand with global impact.</p>
@@ -156,7 +156,7 @@
 
   function slideBrands(direction) {
     const carousel = document.getElementById('brandsScroll');
-    const card = carousel.querySelector('.brand-card');
+    const card = carousel.querySelector('.card');
     const style = getComputedStyle(card);
 
     const cardWidth = card.offsetWidth + parseFloat(style.marginLeft) + parseFloat(style.marginRight);
