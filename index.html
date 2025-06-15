@@ -41,7 +41,7 @@
   <!-- Our Services -->
   <section class="cards-section" id="services">
     <h2 class="section-title">Our Services</h2>
-    <div class="card-container">
+    <div class="card-container card-slider">
       <div class="card sc1">
         <i class="fas fa-solar-panel"></i>
         <h3>Solar Installation</h3>
@@ -63,7 +63,7 @@
   <!-- Our Products -->
   <section class="cards-section" id="products">
     <h2 class="section-title">Our Products</h2>
-    <div class="card-container">
+    <div class="card-container card-slider">
       <div class="card pc1">
         <i class="fas fa-sun"></i>
         <h3>Mono Panels</h3>
@@ -85,9 +85,9 @@
   <!-- Brands We Use -->
   <section class="brands-section" id="brands">
     <h2 class="section-title">Our Brands</h2>
-    <div class="brands-carousel-wrapper">
+    <div class="brands-carousel card-slider-wrapper">
       <button class="carousel-btn left" onclick="slideBrands(-1)">&#10094;</button>
-      <div class="brands-carousel" id="brandsScroll">
+      <div class="brands-carousel card-slider" id="brandsScroll">
         <div class="card">
           <img src="images/brands/logo1.png" alt="Brand 1" />
           <h3>Brand One</h3>
@@ -158,31 +158,43 @@
     const carousel = document.getElementById('brandsScroll');
     const card = carousel.querySelector('.card');
     const style = getComputedStyle(card);
-
     const cardWidth = card.offsetWidth + parseFloat(style.marginLeft) + parseFloat(style.marginRight);
     const visibleCards = 3;
     const totalCards = carousel.children.length;
     const maxIndex = totalCards - visibleCards;
 
     currentIndex += direction;
-
     if (currentIndex > maxIndex) currentIndex = 0;
     if (currentIndex < 0) currentIndex = maxIndex;
 
     const scrollX = currentIndex * cardWidth;
     carousel.style.transform = `translateX(-${scrollX}px)`;
   }
-  
 
-  // 🔁 Auto-slide every 4 seconds
-  setInterval(() => {
-    slideBrands(1);
-  }, 4000);
+  // 🟢 Mobile Auto-Slide One Card by One
   if (window.innerWidth <= 768) {
-  // example if using Swiper:
-  mySwiper.autoplay.stop();
-}
+    const sliders = document.querySelectorAll('.card-slider');
 
+    sliders.forEach(slider => {
+      let interval = setInterval(() => {
+        const card = slider.querySelector('.card');
+        if (!card) return;
+
+        const cardWidth = card.offsetWidth + 20;
+        const maxScroll = slider.scrollWidth - slider.clientWidth;
+
+        if (slider.scrollLeft + cardWidth >= maxScroll) {
+          slider.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          slider.scrollBy({ left: cardWidth, behavior: 'smooth' });
+        }
+      }, 4000);
+
+      // Stop auto-slide when user swipes
+      slider.addEventListener('touchstart', () => clearInterval(interval), { once: true });
+    });
+  }
 </script>
+
 </body>
 </html>
