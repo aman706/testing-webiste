@@ -371,12 +371,22 @@ section h3 {
     scroll-behavior: auto !important;
     animation: none !important;
     transform: none !important;
+      display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0 10px;
   }
 
   .brand-card {
     width: 100%;
     max-width: 90%;
     margin: 10px auto;
+  }
+   .brands-carousel .card {
+    width: 100%;
+    max-width: 90%;
+    margin: 10px 0;
+    flex: 1 1 100%;
   }
 
   .carousel-btn {
