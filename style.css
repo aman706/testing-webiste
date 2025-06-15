@@ -125,12 +125,60 @@ nav a:hover {
 }
 
 .card {
-  background-color: rgba(0, 0, 0, 0.6);
   border-radius: 12px;
   padding: 30px 20px;
   width: 280px;
   text-align: center;
   transition: transform 0.3s ease, background-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+/* Individual Backgrounds - Services */
+.card.sc1 {
+  background: url('images/services/service1.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.card.sc2 {
+  background: url('images/services/service2.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.card.sc3 {
+  background: url('images/services/service3.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+/* Individual Backgrounds - Products */
+.card.pc1 {
+  background: url('images/products/product1.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.card.pc2 {
+  background: url('images/products/product2.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.card.pc3 {
+  background: url('images/products/product3.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+/* Overlay effect for readability */
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+  border-radius: 12px;
+}
+.card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .card i {
@@ -147,12 +195,11 @@ nav a:hover {
 
 .card p {
   font-size: 1rem;
-  color: #ddd;
+  color: #eee;
 }
 
 .card:hover {
   transform: translateY(-10px);
-  background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* Contact Section */
