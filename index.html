@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Solar Panel Company</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
 
@@ -84,48 +84,44 @@
 
   <!-- Brands We Use -->
   <section class="brands-section" id="brands">
-  <h2 class="section-title">Our Brands</h2>
-  
-  <div class="brands-carousel-wrapper">
-    <button class="carousel-btn left" onclick="slideBrands(-1)">&#10094;</button>
-    
-    <div class="brands-carousel">
-      <div class="brand-card">
-        <img src="images/brands/logo1.png" alt="Brand 1" />
-        <h3>Brand One</h3>
-        <p>High-efficiency solar panels trusted worldwide.</p>
+    <h2 class="section-title">Our Brands</h2>
+    <div class="brands-carousel-wrapper">
+      <button class="carousel-btn left" onclick="slideBrands(-1)">&#10094;</button>
+      <div class="brands-carousel" id="brandsScroll">
+        <div class="brand-card">
+          <img src="images/brands/logo1.png" alt="Brand 1" />
+          <h3>Brand One</h3>
+          <p>High-efficiency solar panels trusted worldwide.</p>
+        </div>
+        <div class="brand-card">
+          <img src="images/brands/logo2.png" alt="Brand 2" />
+          <h3>Brand Two</h3>
+          <p>Innovative solar solutions with 25-year warranty.</p>
+        </div>
+        <div class="brand-card">
+          <img src="images/brands/logo3.png" alt="Brand 3" />
+          <h3>Brand Three</h3>
+          <p>Reliable performance in all weather conditions.</p>
+        </div>
+        <div class="brand-card">
+          <img src="images/brands/logo4.png" alt="Brand 4" />
+          <h3>Brand Four</h3>
+          <p>Affordable solar technology for everyday use.</p>
+        </div>
+        <div class="brand-card">
+          <img src="images/brands/logo5.png" alt="Brand 5" />
+          <h3>Brand Five</h3>
+          <p>Durable panels designed for harsh environments.</p>
+        </div>
+        <div class="brand-card">
+          <img src="images/brands/logo6.png" alt="Brand 6" />
+          <h3>Brand Six</h3>
+          <p>Trusted solar brand with global impact.</p>
+        </div>
       </div>
-      <div class="brand-card">
-        <img src="images/brands/logo2.png" alt="Brand 2" />
-        <h3>Brand Two</h3>
-        <p>Innovative solar solutions with 25-year warranty.</p>
-      </div>
-      <div class="brand-card">
-        <img src="images/brands/logo3.png" alt="Brand 3" />
-        <h3>Brand Three</h3>
-        <p>Reliable performance in all weather conditions.</p>
-      </div>
-      <div class="brand-card">
-        <img src="images/brands/logo4.png" alt="Brand 4" />
-        <h3>Brand Four</h3>
-        <p>Affordable solar technology for everyday use.</p>
-      </div>
-      <div class="brand-card">
-        <img src="images/brands/logo5.png" alt="Brand 5" />
-        <h3>Brand Five</h3>
-        <p>Durable panels designed for harsh environments.</p>
-      </div>
-      <div class="brand-card">
-        <img src="images/brands/logo6.png" alt="Brand 6" />
-        <h3>Brand Six</h3>
-        <p>Trusted solar brand with global impact.</p>
-      </div>
+      <button class="carousel-btn right" onclick="slideBrands(1)">&#10095;</button>
     </div>
-    
-    <button class="carousel-btn right" onclick="slideBrands(1)">&#10095;</button>
-  </div>
-</section>
-
+  </section>
 
   <!-- Contact Section -->
   <section class="contact-section" id="contact">
@@ -148,7 +144,7 @@
     <p>© 2025 SolarCo. All rights reserved.</p>
   </footer>
 
-  <!-- Script for Hamburger Toggle and Brands Scroll -->
+  <!-- JavaScript -->
   <script>
     const hamburger = document.querySelector('.hamburger');
     const nav = document.querySelector('nav');
@@ -156,10 +152,23 @@
       nav.classList.toggle('active');
     });
 
-    function scrollBrands(direction) {
-      const container = document.getElementById('brandsScroll');
-      const scrollAmount = container.offsetWidth;
-      container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+    let brandIndex = 0;
+
+    function slideBrands(direction) {
+      const cards = document.querySelectorAll('.brand-card');
+      const totalCards = cards.length;
+      const cardsPerView = 3;
+      const maxIndex = Math.ceil(totalCards / cardsPerView) - 1;
+
+      brandIndex += direction;
+
+      if (brandIndex < 0) brandIndex = 0;
+      if (brandIndex > maxIndex) brandIndex = maxIndex;
+
+      const carousel = document.getElementById('brandsScroll');
+      const shiftPercent = brandIndex * (100 / (totalCards / cardsPerView));
+
+      carousel.style.transform = `translateX(-${shiftPercent}%)`;
     }
 
     const swipeContainer = document.getElementById('brandsScroll');
@@ -173,31 +182,9 @@
       const endX = e.changedTouches[0].clientX;
       const diff = startX - endX;
       if (Math.abs(diff) > 50) {
-        scrollBrands(diff > 0 ? 1 : -1);
+        slideBrands(diff > 0 ? 1 : -1);
       }
     });
-    let brandIndex = 0;
-
-function slideBrands(direction) {
-  const cards = document.querySelectorAll('.brand-card');
-  const totalCards = cards.length;
-  const cardsPerView = 3;
-  const maxIndex = Math.ceil(totalCards / cardsPerView) - 1;
-
-  brandIndex += direction;
-
-  if (brandIndex < 0) brandIndex = 0;
-  if (brandIndex > maxIndex) brandIndex = maxIndex;
-
-  const carousel = document.querySelector('.brands-carousel');
-  const shiftPercent = brandIndex * (100 / (totalCards / cardsPerView));
-
-  carousel.style.transform = `translateX(-${shiftPercent}%)`;
-}
   </script>
-
-  </body>
-</html>
-
 </body>
 </html>
