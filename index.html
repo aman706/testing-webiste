@@ -84,22 +84,45 @@
 
   <!-- Brands We Use -->
   <section class="brands-section" id="brands">
-    <h2 class="section-title">Brands We Use</h2>
-    <div class="brand-list">
-      <div class="brand-card">
-        <img src="images/brands/longi.png" alt="LONGi Solar" />
-        <h3>LONGi Solar</h3>
-        <p>Renowned for high-efficiency monocrystalline panels and top-tier reliability.</p>
+    <h2 class="section-title">Our Brands</h2>
+
+    <!-- Scroll Buttons -->
+    <div class="scroll-buttons">
+      <button class="scroll-btn left" onclick="scrollBrands(-1)">&#10094;</button>
+      <button class="scroll-btn right" onclick="scrollBrands(1)">&#10095;</button>
+    </div>
+
+    <!-- Brand Cards Scrollable Container -->
+    <div class="card-container brands-scroll" id="brandsScroll">
+      <div class="card bc1">
+        <img src="images/brands/logo1.png" alt="Brand 1 Logo" class="card-logo" />
+        <h3>Brand One</h3>
+        <p>High-efficiency solar panels trusted worldwide.</p>
       </div>
-      <div class="brand-card">
-        <img src="images/brands/jinko.png" alt="Jinko Solar" />
-        <h3>Jinko Solar</h3>
-        <p>One of the world’s largest and most innovative solar module manufacturers.</p>
+      <div class="card bc2">
+        <img src="images/brands/logo2.png" alt="Brand 2 Logo" class="card-logo" />
+        <h3>Brand Two</h3>
+        <p>Innovative solar solutions with 25-year warranty.</p>
       </div>
-      <div class="brand-card">
-        <img src="images/brands/trina.png" alt="Trina Solar" />
-        <h3>Trina Solar</h3>
-        <p>Known for high-performance panels and strong global presence in solar tech.</p>
+      <div class="card bc3">
+        <img src="images/brands/logo3.png" alt="Brand 3 Logo" class="card-logo" />
+        <h3>Brand Three</h3>
+        <p>Reliable performance in all weather conditions.</p>
+      </div>
+      <div class="card bc4">
+        <img src="images/brands/logo4.png" alt="Brand 4 Logo" class="card-logo" />
+        <h3>Brand Four</h3>
+        <p>Affordable solar panels with top-tier output.</p>
+      </div>
+      <div class="card bc5">
+        <img src="images/brands/logo5.png" alt="Brand 5 Logo" class="card-logo" />
+        <h3>Brand Five</h3>
+        <p>Smart energy panels with AI monitoring.</p>
+      </div>
+      <div class="card bc6">
+        <img src="images/brands/logo6.png" alt="Brand 6 Logo" class="card-logo" />
+        <h3>Brand Six</h3>
+        <p>Eco-friendly manufacturing and long lifespan.</p>
       </div>
     </div>
   </section>
@@ -125,12 +148,33 @@
     <p>© 2025 SolarCo. All rights reserved.</p>
   </footer>
 
-  <!-- Script for Hamburger Toggle -->
+  <!-- Script for Hamburger Toggle and Brands Scroll -->
   <script>
     const hamburger = document.querySelector('.hamburger');
     const nav = document.querySelector('nav');
     hamburger.addEventListener('click', () => {
       nav.classList.toggle('active');
+    });
+
+    function scrollBrands(direction) {
+      const container = document.getElementById('brandsScroll');
+      const scrollAmount = container.offsetWidth / 1.2;
+      container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+    }
+
+    const swipeContainer = document.getElementById('brandsScroll');
+    let startX;
+
+    swipeContainer.addEventListener('touchstart', e => {
+      startX = e.touches[0].clientX;
+    });
+
+    swipeContainer.addEventListener('touchend', e => {
+      const endX = e.changedTouches[0].clientX;
+      const diff = startX - endX;
+      if (Math.abs(diff) > 50) {
+        scrollBrands(diff > 0 ? 1 : -1);
+      }
     });
   </script>
 </body>
