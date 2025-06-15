@@ -276,10 +276,11 @@ section h3 {
 
 .brands-carousel {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  width: 100%;
+  overflow: hidden;
+  scroll-behavior: smooth;
 }
+
 
 
 .brand-card {
