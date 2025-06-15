@@ -7,9 +7,8 @@
 
 /* Solar-themed Background */
 body {
-  background: url('https://images.unsplash.com/photo-1581092334903-658b4c736358?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+  background: url('images/solar-bg.jpg') no-repeat center center fixed;
   background-size: cover;
-  color: #222;
 }
 /* Top Contact Bar */
 .top-bar {
