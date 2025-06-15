@@ -1,354 +1,168 @@
-/* Reset and Base Styles */
-* {
+/* Global Background and Font */
+body {
+  background: url('images/bg.jpg') no-repeat center center fixed;
+  background-size: cover;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background: url('images/solar-bg.jpg') no-repeat center center fixed;
-  background-size: cover;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   color: #fff;
 }
 
 /* Top Contact Bar */
 .top-bar {
-  background-color: rgba(0, 0, 0, 0.7);
-  color: #fff;
-  padding: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 8px 15px;
+  font-size: 14px;
   text-align: center;
-  font-size: 0.9rem;
 }
 
-/* Navbar */
+/* Navigation */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.85);
   padding: 15px 30px;
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 100;
 }
 
 .logo {
   display: flex;
   align-items: center;
+  gap: 10px;
 }
 
 .logo img {
+  width: 40px;
   height: 40px;
-  margin-right: 10px;
 }
 
-.logo span {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #fff;
-}
-
-nav a {
-  color: #fff;
-  text-decoration: none;
+.navbar nav a {
+  color: white;
   margin: 0 15px;
+  text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: #fdd835;
 }
 
 .hamburger {
   display: none;
-  font-size: 1.5rem;
-  color: #fff;
+  font-size: 24px;
 }
 
-/* Responsive Menu */
-@media (max-width: 768px) {
-  nav {
-    display: none;
-    flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.9);
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 200px;
-  }
-
-  nav.active {
-    display: flex;
-  }
-
-  .hamburger {
-    display: block;
-    cursor: pointer;
-  }
-}
-
-/* Section Titles */
+/* Section Headings */
 .section-title {
   text-align: center;
-  font-size: 2.5rem;
-  margin: 2rem 0 1rem;
-  color: #fff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  font-size: 2rem;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: #fdd835;
 }
 
 /* About Section */
 .about-section {
-  padding: 60px 20px;
+  padding: 20px 10%;
   text-align: center;
 }
 
-.about-section .about-text {
-  max-width: 800px;
-  margin: 0 auto;
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: #f0f0f0;
+.about-text {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: auto;
 }
 
-/* Cards Section */
+/* Card Section */
 .cards-section {
-  padding: 60px 20px;
+  padding: 40px 0;
 }
 
-.card-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
-  align-items: stretch;
-  padding: 20px;
-}
-
-.card {
-  flex: 1 1 320px;
-  min-height: 420px;
-  padding: 35px 25px;
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  justify-content: flex-start;
-  gap: 15px;
+.card-wrapper {
   position: relative;
   overflow: hidden;
+  padding: 0 40px;
+}
+
+.scrollable {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.scrollable::-webkit-scrollbar {
+  display: none;
+}
+
+/* Cards */
+.card {
+  flex: 0 0 300px;
+  height: 420px;
   background-size: cover;
   background-position: center;
+  border-radius: 15px;
+  padding: 20px;
   color: white;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease;
+  backdrop-filter: blur(2px);
 }
 
 .card:hover {
-  transform: translateY(-10px);
-}
-
-/* Overlay for Readability */
-.card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: 0;
-  border-radius: 12px;
-}
-
-.card > * {
-  position: relative;
-  z-index: 1;
-}
-
-/* Icon / Logo */
-.card i {
-  font-size: 3rem;
-  color: #fdd835;
-  margin-bottom: 10px;
-}
-
-/* Headings and Text */
-.card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 5px;
-  color: #fff;
-}
-
-.card p {
-  font-size: 1rem;
-  color: #eee;
-  line-height: 1.6;
-}
-
-/* Individual Backgrounds - Services */
-.card.sc1 {
-  background: url('images/services/service1.jpg') no-repeat center center;
-  background-size: cover;
-}
-
-.card.sc2 {
-  background: url('images/services/service2.jpg') no-repeat center center;
-  background-size: cover;
-}
-
-.card.sc3 {
-  background: url('images/services/service3.jpg') no-repeat center center;
-  background-size: cover;
-}
-
-/* Individual Backgrounds - Products */
-.card.pc1 {
-  background: url('images/products/product1.jpg') no-repeat center center;
-  background-size: cover;
-}
-
-.card.pc2 {
-  background: url('images/products/product2.jpg') no-repeat center center;
-  background-size: cover;
-}
-
-.card.pc3 {
-  background: url('images/products/product3.jpg') no-repeat center center;
-  background-size: cover;
-}
-
-/* Responsive Card Stack */
-@media (max-width: 768px) {
-  .card-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .card {
-    width: 100%;
-    max-width: 500px;
-  }
-}
-
-/* Contact Section */
-.contact-section {
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.contact-section form {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.contact-section input,
-.contact-section textarea {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border: none;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.9);
-  font-size: 1rem;
-  color: #333;
-}
-
-.contact-section button {
-  padding: 12px 25px;
-  background-color: #fdd835;
-  border: none;
-  border-radius: 8px;
-  color: #000;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.contact-section button:hover {
-  background-color: #ffeb3b;
-}
-
-/* Footer */
-footer {
-  background-color: rgba(0, 0, 0, 0.9);
-  text-align: center;
-  padding: 20px 10px;
-  color: #aaa;
-}
-
-footer .social-links a {
-  margin: 0 10px;
-  color: #fff;
-  font-size: 1.2rem;
-  transition: color 0.3s ease;
-}
-
-footer .social-links a:hover {
-  color: #fdd835;
-}
-
-/* Section Heading Adjustment */
-section h1,
-section h2,
-section h3 {
-  text-align: center;
-  color: white;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  font-size: 2rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-}
-.brands-section {
-  padding: 60px 20px;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: #fff;
-}
-
-.brand-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  padding-top: 20px;
-}
-
-.brand-card {
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  padding: 25px 20px;
-  width: 300px;
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.brand-card:hover {
   transform: scale(1.05);
 }
 
-.brand-card img {
-  max-width: 120px;
-  margin-bottom: 15px;
+/* Card Logo */
+.card-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin: 0 auto 10px;
 }
 
-.brand-card h3 {
-  font-size: 1.3rem;
-  color: #fdd835;
-  margin-bottom: 10px;
+/* Scroll Buttons */
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
 }
 
-.brand-card p {
-  font-size: 1rem;
-  color: #ccc;
-  line-height: 1.4;
+.left-btn {
+  left: 10px;
 }
 
-/* Responsive Adjustment */
+.right-btn {
+  right: 10px;
+}
+
+.scroll-btn:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  .brand-list {
-    flex-direction: column;
-    align-items: center;
+  .navbar nav {
+    display: none;
   }
-
-  .brand-card {
-    width: 90%;
+  .hamburger {
+    display: block;
+  }
+  .card {
+    flex: 0 0 85%;
+  }
+  .card-wrapper {
+    padding: 0 10px;
   }
 }
