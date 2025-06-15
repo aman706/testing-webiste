@@ -276,8 +276,8 @@ section h3 {
 
 .brands-carousel {
   display: flex;
-  transition: transform 0.5s ease;
-  width: calc(100% * 2); /* 2 slides (3 per slide from 6 total) */
+  transition: transform 0.5s ease-in-out;
+  width: calc( (100% / 3) * 6 ); /* 6 cards, 3 at a time */
 }
 
 .brand-card {
