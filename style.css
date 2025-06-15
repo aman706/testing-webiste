@@ -400,15 +400,24 @@ section h3 {
 .brands-carousel-wrapper {
   position: relative;
   overflow: hidden;
-  max-width: 100%;
-  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .brands-carousel {
   display: flex;
   transition: transform 0.5s ease;
-  width: 200%; /* enough to fit all items */
+  width: calc(100% * 2); /* For 6 items, 3 per view = 2 slides */
 }
+
+.brand-card {
+  flex: 0 0 33.33%; /* 3 items per slide */
+  box-sizing: border-box;
+  padding: 20px;
+  text-align: center;
+}
+
 
 .brand-card {
   flex: 0 0 33.33%;
