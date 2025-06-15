@@ -5,10 +5,8 @@
   font-family: 'Segoe UI', sans-serif;
 }
 
-/* Solar-themed Background */ body {
-  background: url('images/solar-bg.jpg') no-repeat center center fixed; 
-  background-size: cover;
-}
+/* Solar-themed Background */ body { background: url('images/solar-bg.jpg') no-repeat center center fixed; background-size: cover; }
+
 .top-bar {
   background: #004d40;
   color: white;
@@ -90,18 +88,11 @@
   color: white;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 .card:hover {
   transform: translateY(-10px);
-}
-
-.service-card {
-  background-image: url('images/service-bg.jpg');
-}
-
-.product-card {
-  background-image: url('images/product-bg.jpg');
 }
 
 .card i {
@@ -119,6 +110,28 @@
 .card p {
   font-size: 1rem;
   color: #f1f1f1;
+}
+
+/* Service Card Backgrounds */
+.sc1 {
+  background-image: url('images/services/service1.jpg');
+}
+.sc2 {
+  background-image: url('images/services/service2.jpg');
+}
+.sc3 {
+  background-image: url('images/services/service3.jpg');
+}
+
+/* Product Card Backgrounds */
+.pc1 {
+  background-image: url('images/products/product1.jpg');
+}
+.pc2 {
+  background-image: url('images/products/product2.jpg');
+}
+.pc3 {
+  background-image: url('images/products/product3.jpg');
 }
 
 /* Responsive Design */
