@@ -418,6 +418,13 @@ section h3 {
   text-align: center;
 }
 
+.brand-card {
+  flex: 0 0 33.33%; /* 3 items per slide */
+  box-sizing: border-box;
+  padding: 20px;
+  text-align: center;
+}
+
 
 .brand-card {
   flex: 0 0 33.33%;
