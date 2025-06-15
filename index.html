@@ -5,20 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Solar Panel Company</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
 <body>
 
-  <!-- Top Bar -->
-  <div class="top-bar">
-    Contact us: +91 12345 67890 | Email: info@solarcompany.com
-  </div>
+  <div class="top-bar">Call us today: +123-456-7890 | Email: info@solarco.com</div>
 
-  <!-- Navbar -->
   <header class="navbar">
     <div class="logo">
-      <img src="images/logo.png" alt="Logo">
-      <span>SolarCo</span>
+      <img src="images/logo.png" alt="Logo" />
+      SolarCo
     </div>
     <nav>
       <a href="#about">About</a>
@@ -27,163 +22,133 @@
       <a href="#brands">Brands</a>
       <a href="#contact">Contact</a>
     </nav>
-    <div class="hamburger"><i class="fas fa-bars"></i></div>
+    <div class="hamburger">☰</div>
   </header>
 
   <!-- About Section -->
-  <section class="about-section" id="about">
+  <section id="about" class="about-section">
     <h2 class="section-title">About Us</h2>
-    <p class="about-text">
-      We are a solar panel solutions provider offering clean and reliable energy for homes and businesses.
-    </p>
+    <div class="about-text">
+      <p>We provide sustainable solar energy solutions for homes and businesses. Our goal is to empower communities with affordable, clean energy options.</p>
+    </div>
   </section>
 
   <!-- Services Section -->
-  <section class="cards-section" id="services">
+  <section id="services" class="cards-section">
     <h2 class="section-title">Our Services</h2>
     <div class="card-wrapper">
-      <button class="scroll-btn left-btn"><i class="fas fa-chevron-left"></i></button>
-      <div class="card-container scrollable" id="servicesCards">
-        <!-- 6 service cards -->
-        <!-- Update images/logo as needed -->
+      <button class="scroll-btn left-btn" onclick="scrollCards('services-cards', -1)">&#8249;</button>
+      <div class="card-container" id="services-cards">
         <div class="card" style="background-image: url('images/cards/service1.jpg');">
-          <img class="card-logo" src="images/logo.png" alt="logo">
-          <h3>Solar Installation</h3>
-          <p>High-efficiency installation for residential and commercial projects.</p>
+          <img src="images/cards/service-logo1.png" class="card-logo" alt="Logo">
+          <h3>Installation</h3>
+          <p>Professional solar panel installation with certified engineers.</p>
         </div>
         <div class="card" style="background-image: url('images/cards/service2.jpg');">
-          <img class="card-logo" src="images/logo.png" alt="logo">
+          <img src="images/cards/service-logo2.png" class="card-logo" alt="Logo">
           <h3>Maintenance</h3>
-          <p>Keep your system running smoothly with regular maintenance.</p>
+          <p>Reliable and affordable maintenance services for your systems.</p>
         </div>
         <div class="card" style="background-image: url('images/cards/service3.jpg');">
-          <img class="card-logo" src="images/logo.png" alt="logo">
-          <h3>Energy Audit</h3>
-          <p>Get a professional audit for efficient solar planning.</p>
-        </div>
-        <div class="card" style="background-image: url('images/cards/service4.jpg');">
-          <img class="card-logo" src="images/logo.png" alt="logo">
-          <h3>Battery Backup</h3>
-          <p>Reliable energy storage solutions for round-the-clock power.</p>
-        </div>
-        <div class="card" style="background-image: url('images/cards/service5.jpg');">
-          <img class="card-logo" src="images/logo.png" alt="logo">
-          <h3>Remote Monitoring</h3>
-          <p>Track your solar system performance online, anytime.</p>
-        </div>
-        <div class="card" style="background-image: url('images/cards/service6.jpg');">
-          <img class="card-logo" src="images/logo.png" alt="logo">
-          <h3>EV Charging</h3>
-          <p>Integrate your solar system with electric vehicle charging.</p>
+          <img src="images/cards/service-logo3.png" class="card-logo" alt="Logo">
+          <h3>Consultation</h3>
+          <p>Energy audits and customized solar solutions for every client.</p>
         </div>
       </div>
-      <button class="scroll-btn right-btn"><i class="fas fa-chevron-right"></i></button>
+      <button class="scroll-btn right-btn" onclick="scrollCards('services-cards', 1)">&#8250;</button>
     </div>
   </section>
 
   <!-- Products Section -->
-  <section class="cards-section" id="products">
+  <section id="products" class="cards-section">
     <h2 class="section-title">Our Products</h2>
     <div class="card-wrapper">
-      <button class="scroll-btn left-btn"><i class="fas fa-chevron-left"></i></button>
-      <div class="card-container scrollable" id="productsCards">
-        <!-- 6 product cards -->
+      <button class="scroll-btn left-btn" onclick="scrollCards('products-cards', -1)">&#8249;</button>
+      <div class="card-container" id="products-cards">
         <div class="card" style="background-image: url('images/cards/product1.jpg');">
-          <img class="card-logo" src="images/logo.png" alt="logo">
-          <h3>Mono Panels</h3>
-          <p>High-efficiency monocrystalline solar panels for rooftops.</p>
+          <img src="images/cards/product-logo1.png" class="card-logo" alt="Logo">
+          <h3>Solar Panels</h3>
+          <p>High-efficiency panels with long warranties and great ROI.</p>
         </div>
         <div class="card" style="background-image: url('images/cards/product2.jpg');">
-          <img class="card-logo" src="images/logo.png" alt="logo">
-          <h3>Poly Panels</h3>
-          <p>Affordable and durable polycrystalline panels.</p>
+          <img src="images/cards/product-logo2.png" class="card-logo" alt="Logo">
+          <h3>Inverters</h3>
+          <p>Convert solar energy efficiently with top-rated inverters.</p>
         </div>
         <div class="card" style="background-image: url('images/cards/product3.jpg');">
-          <img class="card-logo" src="images/logo.png" alt="logo">
-          <h3>Inverters</h3>
-          <p>Smart inverters for efficient energy conversion.</p>
-        </div>
-        <div class="card" style="background-image: url('images/cards/product4.jpg');">
-          <img class="card-logo" src="images/logo.png" alt="logo">
-          <h3>Mounting Systems</h3>
-          <p>Reliable mounting kits for various rooftops.</p>
-        </div>
-        <div class="card" style="background-image: url('images/cards/product5.jpg');">
-          <img class="card-logo" src="images/logo.png" alt="logo">
-          <h3>Charge Controllers</h3>
-          <p>Regulate and protect your battery bank.</p>
-        </div>
-        <div class="card" style="background-image: url('images/cards/product6.jpg');">
-          <img class="card-logo" src="images/logo.png" alt="logo">
-          <h3>Solar Lights</h3>
-          <p>All-in-one street and garden lighting systems.</p>
+          <img src="images/cards/product-logo3.png" class="card-logo" alt="Logo">
+          <h3>Batteries</h3>
+          <p>Store energy with powerful lithium battery options.</p>
         </div>
       </div>
-      <button class="scroll-btn right-btn"><i class="fas fa-chevron-right"></i></button>
+      <button class="scroll-btn right-btn" onclick="scrollCards('products-cards', 1)">&#8250;</button>
     </div>
   </section>
 
-  <!-- Brands Section -->
-  <section class="brands-section" id="brands">
-    <h2 class="section-title">Our Panel Brands</h2>
-    <div class="brands-container">
-      <p>We use trusted panels and equipment from:</p>
-      <ul>
-        <li>Tata Power Solar</li>
-        <li>Adani Solar</li>
-        <li>Vikram Solar</li>
-        <li>Waaree Energies</li>
-        <li>RenewSys</li>
-        <li>Microtek</li>
-      </ul>
+  <!-- Brands Section (Updated) -->
+  <section id="brands" class="cards-section">
+    <h2 class="section-title">Our Brands</h2>
+    <div class="card-wrapper">
+      <button class="scroll-btn left-btn" onclick="scrollCards('brands-cards', -1)">&#8249;</button>
+      <div class="card-container" id="brands-cards">
+        <div class="card" style="background-image: url('images/cards/brand1.jpg');">
+          <img src="images/cards/brand-logo1.png" class="card-logo" alt="Logo">
+          <h3>SunPower</h3>
+          <p>High-efficiency solar panels known for long lifespan and durability.</p>
+        </div>
+        <div class="card" style="background-image: url('images/cards/brand2.jpg');">
+          <img src="images/cards/brand-logo2.png" class="card-logo" alt="Logo">
+          <h3>Canadian Solar</h3>
+          <p>Trusted for consistent performance and cost-effectiveness globally.</p>
+        </div>
+        <div class="card" style="background-image: url('images/cards/brand3.jpg');">
+          <img src="images/cards/brand-logo3.png" class="card-logo" alt="Logo">
+          <h3>Trina Solar</h3>
+          <p>Innovative solar technologies used in both residential and commercial setups.</p>
+        </div>
+      </div>
+      <button class="scroll-btn right-btn" onclick="scrollCards('brands-cards', 1)">&#8250;</button>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section class="contact-section" id="contact">
+  <section id="contact" class="contact-section">
     <h2 class="section-title">Contact Us</h2>
     <div class="contact-container">
       <form class="contact-form">
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <input type="text" placeholder="Name" required>
+        <input type="email" placeholder="Email" required>
+        <textarea rows="5" placeholder="Your Message" required></textarea>
         <button type="submit">Send Message</button>
       </form>
       <div class="contact-info">
-        <p><strong>Phone:</strong> +91 12345 67890</p>
-        <p><strong>Email:</strong> info@solarcompany.com</p>
-        <p><strong>Address:</strong> SolarCo HQ, Green Energy Park, Pune</p>
+        <p><strong>Office:</strong> 123 Solar Lane, Energy City, CA</p>
+        <p><strong>Phone:</strong> +123-456-7890</p>
+        <p><strong>Email:</strong> info@solarco.com</p>
+        <p><strong>Hours:</strong> Mon–Fri: 9AM–6PM</p>
       </div>
     </div>
   </section>
 
-  <!-- Scroll and Swipe Script -->
   <script>
-    function enableSwipeScroll(id) {
-      const container = document.getElementById(id);
-      const left = container.parentElement.querySelector('.left-btn');
-      const right = container.parentElement.querySelector('.right-btn');
-
-      left.addEventListener('click', () => {
-        container.scrollBy({ left: -320, behavior: 'smooth' });
-      });
-      right.addEventListener('click', () => {
-        container.scrollBy({ left: 320, behavior: 'smooth' });
-      });
-
-      let startX;
-      container.addEventListener('touchstart', (e) => {
-        startX = e.touches[0].clientX;
-      });
-      container.addEventListener('touchend', (e) => {
-        const endX = e.changedTouches[0].clientX;
-        if (startX - endX > 50) container.scrollBy({ left: 320, behavior: 'smooth' });
-        else if (endX - startX > 50) container.scrollBy({ left: -320, behavior: 'smooth' });
-      });
+    function scrollCards(containerId, direction) {
+      const container = document.getElementById(containerId);
+      const scrollAmount = 320;
+      container.scrollLeft += direction * scrollAmount;
     }
 
-    enableSwipeScroll("servicesCards");
-    enableSwipeScroll("productsCards");
+    // Optional: swipe gesture for mobile
+    document.querySelectorAll('.card-container').forEach(container => {
+      let startX;
+      container.addEventListener('touchstart', e => startX = e.touches[0].clientX);
+      container.addEventListener('touchend', e => {
+        const endX = e.changedTouches[0].clientX;
+        const delta = startX - endX;
+        if (delta > 50) container.scrollLeft += 320;
+        if (delta < -50) container.scrollLeft -= 320;
+      });
+    });
   </script>
 </body>
 </html>
+
