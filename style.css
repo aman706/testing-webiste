@@ -149,7 +149,6 @@ nav a:hover {
   transform: translateY(-10px);
 }
 
-/* Overlay for Readability */
 .card::before {
   content: '';
   position: absolute;
@@ -276,11 +275,22 @@ section h3 {
 
 .brands-carousel {
   display: flex;
-  width: 100%;
-  scroll-behavior: smooth;
+  width: fit-content;
+  animation: scrollBrands 40s linear infinite;
 }
 
+@keyframes scrollBrands {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
 
+.brands-carousel-wrapper:hover .brands-carousel {
+  animation-play-state: paused;
+}
 
 .brand-card {
   flex: 1 1 320px;
@@ -300,9 +310,11 @@ section h3 {
   color: white;
   transition: transform 0.3s ease;
 }
+
 .brand-card:hover {
   transform: translateY(-10px);
 }
+
 .brand-card::before {
   content: '';
   position: absolute;
@@ -311,27 +323,30 @@ section h3 {
   z-index: 0;
   border-radius: 12px;
 }
+
 .brand-card > * {
   position: relative;
   z-index: 1;
 }
+
 .brand-card img {
   max-width: 80px;
   height: auto;
   margin-bottom: 15px;
 }
+
 .brand-card h3 {
   font-size: 1.5rem;
   color: #fdd835;
 }
+
 .brand-card p {
   font-size: 1rem;
   color: #eee;
   line-height: 1.4;
 }
 
-
-/* Brand Card Backgrounds */
+/* Backgrounds for Brands */
 .card.bc1 { background: url('images/brands/bg1.jpg') no-repeat center center / cover; }
 .card.bc2 { background: url('images/brands/bg2.jpg') no-repeat center center / cover; }
 .card.bc3 { background: url('images/brands/bg3.jpg') no-repeat center center / cover; }
