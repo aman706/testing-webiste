@@ -6,6 +6,11 @@ body {
   scroll-behavior: smooth;
   background: #f0f9ff;
 }
+section {
+    background: url('images/solar-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+/* Solar-themed Background */ body { background: url('images/solar-bg.jpg') no-repeat center center fixed; background-size: cover; }
 
 .top-bar {
   background-color: #003c3c;
