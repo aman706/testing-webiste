@@ -152,21 +152,25 @@
       nav.classList.toggle('active');
     });
 
-  let brandIndex = 0;
+ <script>
+  let currentSlide = 0;
 
-function slideBrands(direction) {
-  const carousel = document.getElementById("brands-carousel");
-  const cards = carousel.querySelectorAll(".brand-card");
-  const cardWidth = cards[0].offsetWidth + 20; // Include gap
-  const visibleCards = Math.floor(carousel.parentElement.offsetWidth / cardWidth);
-  const maxIndex = cards.length - visibleCards;
+  function scrollBrands(direction) {
+    const carousel = document.getElementById('brandsCarousel');
+    const cardWidth = carousel.querySelector('.brand-card').offsetWidth;
+    const gap = 40; // adjust if you use `gap` in CSS
+    const scrollAmount = (cardWidth + gap) * 3;
 
-  brandIndex += direction;
-  if (brandIndex < 0) brandIndex = 0;
-  if (brandIndex > maxIndex) brandIndex = maxIndex;
+    currentSlide += direction;
+    if (currentSlide < 0) currentSlide = 0;
+    if (currentSlide > 1) currentSlide = 1; // only 2 slides of 3 cards
 
-  carousel.style.transform = `translateX(-${brandIndex * cardWidth}px)`;
-}
+    carousel.scrollTo({
+      left: currentSlide * scrollAmount,
+      behavior: 'smooth'
+    });
+  }
+</script>
 
   </script>
 </body>
