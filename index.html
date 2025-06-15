@@ -152,39 +152,22 @@
       nav.classList.toggle('active');
     });
 
-    let brandIndex = 0;
+  let brandIndex = 0;
 
-    function slideBrands(direction) {
-      const cards = document.querySelectorAll('.brand-card');
-      const totalCards = cards.length;
-      const cardsPerView = 3;
-      const maxIndex = Math.ceil(totalCards / cardsPerView) - 1;
+function slideBrands(direction) {
+  const carousel = document.getElementById("brands-carousel");
+  const cards = carousel.querySelectorAll(".brand-card");
+  const cardWidth = cards[0].offsetWidth + 20; // Include gap
+  const visibleCards = Math.floor(carousel.parentElement.offsetWidth / cardWidth);
+  const maxIndex = cards.length - visibleCards;
 
-      brandIndex += direction;
+  brandIndex += direction;
+  if (brandIndex < 0) brandIndex = 0;
+  if (brandIndex > maxIndex) brandIndex = maxIndex;
 
-      if (brandIndex < 0) brandIndex = 0;
-      if (brandIndex > maxIndex) brandIndex = maxIndex;
+  carousel.style.transform = `translateX(-${brandIndex * cardWidth}px)`;
+}
 
-      const carousel = document.getElementById('brandsScroll');
-      const shiftPercent = brandIndex * (100 / (totalCards / cardsPerView));
-
-      carousel.style.transform = `translateX(-${shiftPercent}%)`;
-    }
-
-    const swipeContainer = document.getElementById('brandsScroll');
-    let startX;
-
-    swipeContainer.addEventListener('touchstart', e => {
-      startX = e.touches[0].clientX;
-    });
-
-    swipeContainer.addEventListener('touchend', e => {
-      const endX = e.changedTouches[0].clientX;
-      const diff = startX - endX;
-      if (Math.abs(diff) > 50) {
-        slideBrands(diff > 0 ? 1 : -1);
-      }
-    });
   </script>
 </body>
 </html>
