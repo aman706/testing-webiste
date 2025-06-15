@@ -297,3 +297,58 @@ section h3 {
   font-size: 2rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
+.brands-section {
+  padding: 60px 20px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+}
+
+.brand-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding-top: 20px;
+}
+
+.brand-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 25px 20px;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.brand-card:hover {
+  transform: scale(1.05);
+}
+
+.brand-card img {
+  max-width: 120px;
+  margin-bottom: 15px;
+}
+
+.brand-card h3 {
+  font-size: 1.3rem;
+  color: #fdd835;
+  margin-bottom: 10px;
+}
+
+.brand-card p {
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.4;
+}
+
+/* Responsive Adjustment */
+@media (max-width: 768px) {
+  .brand-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .brand-card {
+    width: 90%;
+  }
+}
