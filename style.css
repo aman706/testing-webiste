@@ -1,127 +1,117 @@
-/* Fonts loaded in HTML head */
-
-/* Reset and Base Styles */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
-  font-size: 18px;
-  line-height: 1.6;
+  background: url('https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+  background-size: cover;
   color: #222;
-  background: linear-gradient(-45deg, #e0f7fa, #b2dfdb, #c8e6c9, #a5d6a7);
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
-  padding-bottom: 3rem;
 }
 
-/* Gradient Animation */
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* Top Nav */
-.top-nav {
-  background-color: #004d40;
-  color: white;
-  padding: 0.5rem 0;
-  font-size: 0.9rem;
-  text-align: center;
-}
-
-/* Navbar Enhanced */
 .navbar {
-  background: linear-gradient(to right, #004d40, #009688, #00796b);
-  padding: 1rem 0;
-  text-align: center;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  position: sticky;
-  top: 0;
-  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+  padding: 1rem 2rem;
+  color: white;
 }
 
-.navbar h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  color: white;
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .navbar nav a {
-  color: #ffffff;
-  margin: 0 1rem;
+  color: white;
   text-decoration: none;
-  font-weight: bold;
+  margin-left: 1rem;
   transition: color 0.3s ease;
 }
 
 .navbar nav a:hover {
-  color: #c8e6c9;
+  color: #ffeb3b;
 }
 
-/* About Section */
-.about-section {
+.section {
   padding: 3rem 2rem;
-  background: linear-gradient(135deg, #fffde7, #fff8e1, #f1f8e9);
-  text-align: center;
-  color: #333;
+  background: rgba(255, 255, 255, 0.9);
+  margin: 2rem;
+  border-radius: 12px;
 }
 
-.about-container {
-  max-width: 800px;
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #0072ff;
+}
+
+.about-text {
+  max-width: 700px;
   margin: 0 auto;
   font-size: 1.1rem;
-  line-height: 1.8;
-}
-
-/* Section Titles */
-.section-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  line-height: 1.6;
   text-align: center;
 }
 
-/* Services & Products Cards */
 .cards-section {
-  padding: 4rem 1rem;
-  background-color: #f4fdfd;
-  text-align: center;
+  padding: 3rem 2rem;
 }
 
 .card-container {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 2rem;
-  margin-top: 2rem;
 }
 
 .card {
-  background: linear-gradient(135deg, #e0f7fa, #b2dfdb);
+  background: rgba(255, 255, 255, 0.85);
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   padding: 2rem;
-  width: 280px;
-  transition: transform 0.3s ease, background 0.5s ease;
-  font-weight: bold;
-  font-size: 1.1rem;
+  width: 300px;
+  transition: transform 0.3s ease;
+  text-align: center;
 }
 
 .card:hover {
   transform: translateY(-10px);
-  background: linear-gradient(135deg, #00bcd4, #009688, #00bcd4);
-  background-size: 200% 200%;
-  animation: cardGradientShift 4s ease infinite;
-  color: white;
 }
 
-@keyframes cardGradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+.card i {
+  font-size: 2.5rem;
+  color: #009688;
+  margin-bottom: 0.5rem;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #444;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .navbar nav a {
+    display: block;
+    margin: 0.5rem 0;
+  }
 }
