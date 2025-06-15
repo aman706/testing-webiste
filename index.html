@@ -5,15 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Solar Panel Company</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
 <body>
 
-  <div class="top-bar">Call us today: +123-456-7890 | Email: info@solarco.com</div>
+  <!-- Top Contact Bar -->
+  <div class="top-bar">
+    Contact us: +91 12345 67890 | Email: info@solarcompany.com
+  </div>
 
+  <!-- Navigation Bar -->
   <header class="navbar">
     <div class="logo">
-      <img src="images/logo.png" alt="Logo" />
-      SolarCo
+      <img src="images/logo.png" alt="Logo">
+      <span>SolarCo</span>
     </div>
     <nav>
       <a href="#about">About</a>
@@ -22,133 +27,111 @@
       <a href="#brands">Brands</a>
       <a href="#contact">Contact</a>
     </nav>
-    <div class="hamburger">☰</div>
+    <div class="hamburger"><i class="fas fa-bars"></i></div>
   </header>
 
   <!-- About Section -->
-  <section id="about" class="about-section">
+  <section class="about-section" id="about">
     <h2 class="section-title">About Us</h2>
     <div class="about-text">
-      <p>We provide sustainable solar energy solutions for homes and businesses. Our goal is to empower communities with affordable, clean energy options.</p>
+      We are a solar panel solutions provider offering clean and reliable energy for homes and businesses.
     </div>
   </section>
 
-  <!-- Services Section -->
-  <section id="services" class="cards-section">
+  <!-- Our Services -->
+  <section class="cards-section" id="services">
     <h2 class="section-title">Our Services</h2>
-    <div class="card-wrapper">
-      <button class="scroll-btn left-btn" onclick="scrollCards('services-cards', -1)">&#8249;</button>
-      <div class="card-container" id="services-cards">
-        <div class="card" style="background-image: url('images/cards/service1.jpg');">
-          <img src="images/cards/service-logo1.png" class="card-logo" alt="Logo">
-          <h3>Installation</h3>
-          <p>Professional solar panel installation with certified engineers.</p>
-        </div>
-        <div class="card" style="background-image: url('images/cards/service2.jpg');">
-          <img src="images/cards/service-logo2.png" class="card-logo" alt="Logo">
-          <h3>Maintenance</h3>
-          <p>Reliable and affordable maintenance services for your systems.</p>
-        </div>
-        <div class="card" style="background-image: url('images/cards/service3.jpg');">
-          <img src="images/cards/service-logo3.png" class="card-logo" alt="Logo">
-          <h3>Consultation</h3>
-          <p>Energy audits and customized solar solutions for every client.</p>
-        </div>
+    <div class="card-container">
+      <div class="card sc1">
+        <i class="fas fa-solar-panel"></i>
+        <h3>Solar Installation</h3>
+        <p>High-efficiency solar installation services for homes and businesses.</p>
       </div>
-      <button class="scroll-btn right-btn" onclick="scrollCards('services-cards', 1)">&#8250;</button>
+      <div class="card sc2">
+        <i class="fas fa-tools"></i>
+        <h3>Maintenance</h3>
+        <p>Reliable and timely maintenance for uninterrupted solar performance.</p>
+      </div>
+      <div class="card sc3">
+        <i class="fas fa-bolt"></i>
+        <h3>Energy Consulting</h3>
+        <p>Expert advice to optimize your energy usage and savings.</p>
+      </div>
     </div>
   </section>
 
-  <!-- Products Section -->
-  <section id="products" class="cards-section">
+  <!-- Our Products -->
+  <section class="cards-section" id="products">
     <h2 class="section-title">Our Products</h2>
-    <div class="card-wrapper">
-      <button class="scroll-btn left-btn" onclick="scrollCards('products-cards', -1)">&#8249;</button>
-      <div class="card-container" id="products-cards">
-        <div class="card" style="background-image: url('images/cards/product1.jpg');">
-          <img src="images/cards/product-logo1.png" class="card-logo" alt="Logo">
-          <h3>Solar Panels</h3>
-          <p>High-efficiency panels with long warranties and great ROI.</p>
-        </div>
-        <div class="card" style="background-image: url('images/cards/product2.jpg');">
-          <img src="images/cards/product-logo2.png" class="card-logo" alt="Logo">
-          <h3>Inverters</h3>
-          <p>Convert solar energy efficiently with top-rated inverters.</p>
-        </div>
-        <div class="card" style="background-image: url('images/cards/product3.jpg');">
-          <img src="images/cards/product-logo3.png" class="card-logo" alt="Logo">
-          <h3>Batteries</h3>
-          <p>Store energy with powerful lithium battery options.</p>
-        </div>
+    <div class="card-container">
+      <div class="card pc1">
+        <i class="fas fa-sun"></i>
+        <h3>Mono Panels</h3>
+        <p>High-performance monocrystalline solar panels for max efficiency.</p>
       </div>
-      <button class="scroll-btn right-btn" onclick="scrollCards('products-cards', 1)">&#8250;</button>
+      <div class="card pc2">
+        <i class="fas fa-solar-panel"></i>
+        <h3>Poly Panels</h3>
+        <p>Cost-effective polycrystalline options with solid durability.</p>
+      </div>
+      <div class="card pc3">
+        <i class="fas fa-battery-full"></i>
+        <h3>Solar Batteries</h3>
+        <p>Reliable energy storage systems to power your home day and night.</p>
+      </div>
     </div>
   </section>
 
-  <!-- Brands Section (Updated) -->
-  <section id="brands" class="cards-section">
-    <h2 class="section-title">Our Brands</h2>
-    <div class="card-wrapper">
-      <button class="scroll-btn left-btn" onclick="scrollCards('brands-cards', -1)">&#8249;</button>
-      <div class="card-container" id="brands-cards">
-        <div class="card" style="background-image: url('images/cards/brand1.jpg');">
-          <img src="images/cards/brand-logo1.png" class="card-logo" alt="Logo">
-          <h3>SunPower</h3>
-          <p>High-efficiency solar panels known for long lifespan and durability.</p>
-        </div>
-        <div class="card" style="background-image: url('images/cards/brand2.jpg');">
-          <img src="images/cards/brand-logo2.png" class="card-logo" alt="Logo">
-          <h3>Canadian Solar</h3>
-          <p>Trusted for consistent performance and cost-effectiveness globally.</p>
-        </div>
-        <div class="card" style="background-image: url('images/cards/brand3.jpg');">
-          <img src="images/cards/brand-logo3.png" class="card-logo" alt="Logo">
-          <h3>Trina Solar</h3>
-          <p>Innovative solar technologies used in both residential and commercial setups.</p>
-        </div>
+  <!-- Brands We Use -->
+  <section class="brands-section" id="brands">
+    <h2 class="section-title">Brands We Use</h2>
+    <div class="brand-list">
+      <div class="brand-card">
+        <img src="images/brands/longi.png" alt="LONGi Solar" />
+        <h3>LONGi Solar</h3>
+        <p>Renowned for high-efficiency monocrystalline panels and top-tier reliability.</p>
       </div>
-      <button class="scroll-btn right-btn" onclick="scrollCards('brands-cards', 1)">&#8250;</button>
+      <div class="brand-card">
+        <img src="images/brands/jinko.png" alt="Jinko Solar" />
+        <h3>Jinko Solar</h3>
+        <p>One of the world’s largest and most innovative solar module manufacturers.</p>
+      </div>
+      <div class="brand-card">
+        <img src="images/brands/trina.png" alt="Trina Solar" />
+        <h3>Trina Solar</h3>
+        <p>Known for high-performance panels and strong global presence in solar tech.</p>
+      </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="contact-section">
-    <h2 class="section-title">Contact Us</h2>
-    <div class="contact-container">
-      <form class="contact-form">
-        <input type="text" placeholder="Name" required>
-        <input type="email" placeholder="Email" required>
-        <textarea rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-      <div class="contact-info">
-        <p><strong>Office:</strong> 123 Solar Lane, Energy City, CA</p>
-        <p><strong>Phone:</strong> +123-456-7890</p>
-        <p><strong>Email:</strong> info@solarco.com</p>
-        <p><strong>Hours:</strong> Mon–Fri: 9AM–6PM</p>
-      </div>
-    </div>
+  <section class="contact-section" id="contact">
+    <h2 class="section-title">Get in Touch</h2>
+    <form>
+      <input type="text" name="name" placeholder="Your Name" required/>
+      <input type="email" name="email" placeholder="Your Email" required/>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
   </section>
 
-  <script>
-    function scrollCards(containerId, direction) {
-      const container = document.getElementById(containerId);
-      const scrollAmount = 320;
-      container.scrollLeft += direction * scrollAmount;
-    }
+  <!-- Footer -->
+  <footer>
+    <div class="social-links">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+    <p>© 2025 SolarCo. All rights reserved.</p>
+  </footer>
 
-    // Optional: swipe gesture for mobile
-    document.querySelectorAll('.card-container').forEach(container => {
-      let startX;
-      container.addEventListener('touchstart', e => startX = e.touches[0].clientX);
-      container.addEventListener('touchend', e => {
-        const endX = e.changedTouches[0].clientX;
-        const delta = startX - endX;
-        if (delta > 50) container.scrollLeft += 320;
-        if (delta < -50) container.scrollLeft -= 320;
-      });
+  <!-- Script for Hamburger Toggle -->
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('nav');
+    hamburger.addEventListener('click', () => {
+      nav.classList.toggle('active');
     });
   </script>
 </body>
 </html>
-
