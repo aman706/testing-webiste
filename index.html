@@ -172,11 +172,17 @@
     const scrollX = currentIndex * cardWidth;
     carousel.style.transform = `translateX(-${scrollX}px)`;
   }
+  
 
   // 🔁 Auto-slide every 4 seconds
   setInterval(() => {
     slideBrands(1);
   }, 4000);
+  if (window.innerWidth <= 768) {
+  // example if using Swiper:
+  mySwiper.autoplay.stop();
+}
+
 </script>
 </body>
 </html>
