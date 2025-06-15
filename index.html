@@ -9,12 +9,12 @@
 </head>
 <body>
 
-  <!-- Top Contact Bar -->
+  <!-- Top Bar -->
   <div class="top-bar">
     Contact us: +91 12345 67890 | Email: info@solarcompany.com
   </div>
 
-  <!-- Navigation Bar -->
+  <!-- Navbar -->
   <header class="navbar">
     <div class="logo">
       <img src="images/logo.png" alt="Logo">
@@ -33,51 +33,109 @@
   <!-- About Section -->
   <section class="about-section" id="about">
     <h2 class="section-title">About Us</h2>
-    <div class="about-text">
+    <p class="about-text">
       We are a solar panel solutions provider offering clean and reliable energy for homes and businesses.
-    </div>
+    </p>
   </section>
 
-  <!-- Our Services Section -->
+  <!-- Services Section -->
   <section class="cards-section" id="services">
     <h2 class="section-title">Our Services</h2>
     <div class="card-wrapper">
       <button class="scroll-btn left-btn"><i class="fas fa-chevron-left"></i></button>
-
-      <div class="card-container scrollable" id="cardContainer">
-        <div class="card" style="background-image: url('images/cards/card1.jpg');">
+      <div class="card-container scrollable" id="servicesCards">
+        <!-- 6 service cards -->
+        <!-- Update images/logo as needed -->
+        <div class="card" style="background-image: url('images/cards/service1.jpg');">
           <img class="card-logo" src="images/logo.png" alt="logo">
           <h3>Solar Installation</h3>
           <p>High-efficiency installation for residential and commercial projects.</p>
         </div>
-        <div class="card" style="background-image: url('images/cards/card2.jpg');">
+        <div class="card" style="background-image: url('images/cards/service2.jpg');">
           <img class="card-logo" src="images/logo.png" alt="logo">
           <h3>Maintenance</h3>
-          <p>We provide ongoing maintenance to keep your system running.</p>
+          <p>Keep your system running smoothly with regular maintenance.</p>
         </div>
-        <div class="card" style="background-image: url('images/cards/card3.jpg');">
+        <div class="card" style="background-image: url('images/cards/service3.jpg');">
           <img class="card-logo" src="images/logo.png" alt="logo">
-          <h3>Energy Consulting</h3>
-          <p>Professional energy audits and solar planning.</p>
+          <h3>Energy Audit</h3>
+          <p>Get a professional audit for efficient solar planning.</p>
         </div>
-        <div class="card" style="background-image: url('images/cards/card4.jpg');">
+        <div class="card" style="background-image: url('images/cards/service4.jpg');">
           <img class="card-logo" src="images/logo.png" alt="logo">
-          <h3>Solar Batteries</h3>
-          <p>Reliable battery systems for 24/7 power support.</p>
+          <h3>Battery Backup</h3>
+          <p>Reliable energy storage solutions for round-the-clock power.</p>
         </div>
-        <div class="card" style="background-image: url('images/cards/card5.jpg');">
+        <div class="card" style="background-image: url('images/cards/service5.jpg');">
           <img class="card-logo" src="images/logo.png" alt="logo">
-          <h3>Smart Monitoring</h3>
-          <p>Real-time solar monitoring and analytics services.</p>
+          <h3>Remote Monitoring</h3>
+          <p>Track your solar system performance online, anytime.</p>
         </div>
-        <div class="card" style="background-image: url('images/cards/card6.jpg');">
+        <div class="card" style="background-image: url('images/cards/service6.jpg');">
           <img class="card-logo" src="images/logo.png" alt="logo">
-          <h3>EV Integration</h3>
-          <p>Integrate EV charging with your solar system.</p>
+          <h3>EV Charging</h3>
+          <p>Integrate your solar system with electric vehicle charging.</p>
         </div>
       </div>
-
       <button class="scroll-btn right-btn"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="cards-section" id="products">
+    <h2 class="section-title">Our Products</h2>
+    <div class="card-wrapper">
+      <button class="scroll-btn left-btn"><i class="fas fa-chevron-left"></i></button>
+      <div class="card-container scrollable" id="productsCards">
+        <!-- 6 product cards -->
+        <div class="card" style="background-image: url('images/cards/product1.jpg');">
+          <img class="card-logo" src="images/logo.png" alt="logo">
+          <h3>Mono Panels</h3>
+          <p>High-efficiency monocrystalline solar panels for rooftops.</p>
+        </div>
+        <div class="card" style="background-image: url('images/cards/product2.jpg');">
+          <img class="card-logo" src="images/logo.png" alt="logo">
+          <h3>Poly Panels</h3>
+          <p>Affordable and durable polycrystalline panels.</p>
+        </div>
+        <div class="card" style="background-image: url('images/cards/product3.jpg');">
+          <img class="card-logo" src="images/logo.png" alt="logo">
+          <h3>Inverters</h3>
+          <p>Smart inverters for efficient energy conversion.</p>
+        </div>
+        <div class="card" style="background-image: url('images/cards/product4.jpg');">
+          <img class="card-logo" src="images/logo.png" alt="logo">
+          <h3>Mounting Systems</h3>
+          <p>Reliable mounting kits for various rooftops.</p>
+        </div>
+        <div class="card" style="background-image: url('images/cards/product5.jpg');">
+          <img class="card-logo" src="images/logo.png" alt="logo">
+          <h3>Charge Controllers</h3>
+          <p>Regulate and protect your battery bank.</p>
+        </div>
+        <div class="card" style="background-image: url('images/cards/product6.jpg');">
+          <img class="card-logo" src="images/logo.png" alt="logo">
+          <h3>Solar Lights</h3>
+          <p>All-in-one street and garden lighting systems.</p>
+        </div>
+      </div>
+      <button class="scroll-btn right-btn"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </section>
+
+  <!-- Brands Section -->
+  <section class="brands-section" id="brands">
+    <h2 class="section-title">Our Panel Brands</h2>
+    <div class="brands-container">
+      <p>We use trusted panels and equipment from:</p>
+      <ul>
+        <li>Tata Power Solar</li>
+        <li>Adani Solar</li>
+        <li>Vikram Solar</li>
+        <li>Waaree Energies</li>
+        <li>RenewSys</li>
+        <li>Microtek</li>
+      </ul>
     </div>
   </section>
 
@@ -99,35 +157,33 @@
     </div>
   </section>
 
-  <!-- Swipe Script -->
+  <!-- Scroll and Swipe Script -->
   <script>
-    const container = document.getElementById('cardContainer');
-    const leftBtn = document.querySelector('.left-btn');
-    const rightBtn = document.querySelector('.right-btn');
+    function enableSwipeScroll(id) {
+      const container = document.getElementById(id);
+      const left = container.parentElement.querySelector('.left-btn');
+      const right = container.parentElement.querySelector('.right-btn');
 
-    leftBtn.addEventListener('click', () => {
-      container.scrollBy({ left: -320, behavior: 'smooth' });
-    });
-
-    rightBtn.addEventListener('click', () => {
-      container.scrollBy({ left: 320, behavior: 'smooth' });
-    });
-
-    // Mobile swipe gesture
-    let startX;
-    container.addEventListener('touchstart', (e) => {
-      startX = e.touches[0].clientX;
-    });
-
-    container.addEventListener('touchend', (e) => {
-      const endX = e.changedTouches[0].clientX;
-      if (startX - endX > 50) {
-        container.scrollBy({ left: 320, behavior: 'smooth' });
-      } else if (endX - startX > 50) {
+      left.addEventListener('click', () => {
         container.scrollBy({ left: -320, behavior: 'smooth' });
-      }
-    });
-  </script>
+      });
+      right.addEventListener('click', () => {
+        container.scrollBy({ left: 320, behavior: 'smooth' });
+      });
 
+      let startX;
+      container.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+      });
+      container.addEventListener('touchend', (e) => {
+        const endX = e.changedTouches[0].clientX;
+        if (startX - endX > 50) container.scrollBy({ left: 320, behavior: 'smooth' });
+        else if (endX - startX > 50) container.scrollBy({ left: -320, behavior: 'smooth' });
+      });
+    }
+
+    enableSwipeScroll("servicesCards");
+    enableSwipeScroll("productsCards");
+  </script>
 </body>
 </html>
