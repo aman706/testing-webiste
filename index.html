@@ -38,100 +38,96 @@
     </div>
   </section>
 
-  <!-- Our Services -->
+  <!-- Our Services Section -->
   <section class="cards-section" id="services">
     <h2 class="section-title">Our Services</h2>
-    <div class="card-container">
-      <div class="card sc1">
-        <i class="fas fa-solar-panel"></i>
-        <h3>Solar Installation</h3>
-        <p>High-efficiency solar installation services for homes and businesses.</p>
-      </div>
-      <div class="card sc2">
-        <i class="fas fa-tools"></i>
-        <h3>Maintenance</h3>
-        <p>Reliable and timely maintenance for uninterrupted solar performance.</p>
-      </div>
-      <div class="card sc3">
-        <i class="fas fa-bolt"></i>
-        <h3>Energy Consulting</h3>
-        <p>Expert advice to optimize your energy usage and savings.</p>
-      </div>
-    </div>
-  </section>
+    <div class="card-wrapper">
+      <button class="scroll-btn left-btn"><i class="fas fa-chevron-left"></i></button>
 
-  <!-- Our Products -->
-  <section class="cards-section" id="products">
-    <h2 class="section-title">Our Products</h2>
-    <div class="card-container">
-      <div class="card pc1">
-        <i class="fas fa-sun"></i>
-        <h3>Mono Panels</h3>
-        <p>High-performance monocrystalline solar panels for max efficiency.</p>
+      <div class="card-container scrollable" id="cardContainer">
+        <div class="card" style="background-image: url('images/cards/card1.jpg');">
+          <img class="card-logo" src="images/logo.png" alt="logo">
+          <h3>Solar Installation</h3>
+          <p>High-efficiency installation for residential and commercial projects.</p>
+        </div>
+        <div class="card" style="background-image: url('images/cards/card2.jpg');">
+          <img class="card-logo" src="images/logo.png" alt="logo">
+          <h3>Maintenance</h3>
+          <p>We provide ongoing maintenance to keep your system running.</p>
+        </div>
+        <div class="card" style="background-image: url('images/cards/card3.jpg');">
+          <img class="card-logo" src="images/logo.png" alt="logo">
+          <h3>Energy Consulting</h3>
+          <p>Professional energy audits and solar planning.</p>
+        </div>
+        <div class="card" style="background-image: url('images/cards/card4.jpg');">
+          <img class="card-logo" src="images/logo.png" alt="logo">
+          <h3>Solar Batteries</h3>
+          <p>Reliable battery systems for 24/7 power support.</p>
+        </div>
+        <div class="card" style="background-image: url('images/cards/card5.jpg');">
+          <img class="card-logo" src="images/logo.png" alt="logo">
+          <h3>Smart Monitoring</h3>
+          <p>Real-time solar monitoring and analytics services.</p>
+        </div>
+        <div class="card" style="background-image: url('images/cards/card6.jpg');">
+          <img class="card-logo" src="images/logo.png" alt="logo">
+          <h3>EV Integration</h3>
+          <p>Integrate EV charging with your solar system.</p>
+        </div>
       </div>
-      <div class="card pc2">
-        <i class="fas fa-solar-panel"></i>
-        <h3>Poly Panels</h3>
-        <p>Cost-effective polycrystalline options with solid durability.</p>
-      </div>
-      <div class="card pc3">
-        <i class="fas fa-battery-full"></i>
-        <h3>Solar Batteries</h3>
-        <p>Reliable energy storage systems to power your home day and night.</p>
-      </div>
-    </div>
-  </section>
 
-  <!-- Brands We Use -->
-  <section class="brands-section" id="brands">
-    <h2 class="section-title">Brands We Use</h2>
-    <div class="brand-list">
-      <div class="brand-card">
-        <img src="images/brands/longi.png" alt="LONGi Solar" />
-        <h3>LONGi Solar</h3>
-        <p>Renowned for high-efficiency monocrystalline panels and top-tier reliability.</p>
-      </div>
-      <div class="brand-card">
-        <img src="images/brands/jinko.png" alt="Jinko Solar" />
-        <h3>Jinko Solar</h3>
-        <p>One of the world’s largest and most innovative solar module manufacturers.</p>
-      </div>
-      <div class="brand-card">
-        <img src="images/brands/trina.png" alt="Trina Solar" />
-        <h3>Trina Solar</h3>
-        <p>Known for high-performance panels and strong global presence in solar tech.</p>
-      </div>
+      <button class="scroll-btn right-btn"><i class="fas fa-chevron-right"></i></button>
     </div>
   </section>
 
   <!-- Contact Section -->
   <section class="contact-section" id="contact">
-    <h2 class="section-title">Get in Touch</h2>
-    <form>
-      <input type="text" name="name" placeholder="Your Name" required/>
-      <input type="email" name="email" placeholder="Your Email" required/>
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+    <h2 class="section-title">Contact Us</h2>
+    <div class="contact-container">
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <div class="contact-info">
+        <p><strong>Phone:</strong> +91 12345 67890</p>
+        <p><strong>Email:</strong> info@solarcompany.com</p>
+        <p><strong>Address:</strong> SolarCo HQ, Green Energy Park, Pune</p>
+      </div>
+    </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="social-links">
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-linkedin-in"></i></a>
-    </div>
-    <p>© 2025 SolarCo. All rights reserved.</p>
-  </footer>
-
-  <!-- Script for Hamburger Toggle -->
+  <!-- Swipe Script -->
   <script>
-    const hamburger = document.querySelector('.hamburger');
-    const nav = document.querySelector('nav');
-    hamburger.addEventListener('click', () => {
-      nav.classList.toggle('active');
+    const container = document.getElementById('cardContainer');
+    const leftBtn = document.querySelector('.left-btn');
+    const rightBtn = document.querySelector('.right-btn');
+
+    leftBtn.addEventListener('click', () => {
+      container.scrollBy({ left: -320, behavior: 'smooth' });
+    });
+
+    rightBtn.addEventListener('click', () => {
+      container.scrollBy({ left: 320, behavior: 'smooth' });
+    });
+
+    // Mobile swipe gesture
+    let startX;
+    container.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+    });
+
+    container.addEventListener('touchend', (e) => {
+      const endX = e.changedTouches[0].clientX;
+      if (startX - endX > 50) {
+        container.scrollBy({ left: 320, behavior: 'smooth' });
+      } else if (endX - startX > 50) {
+        container.scrollBy({ left: -320, behavior: 'smooth' });
+      }
     });
   </script>
+
 </body>
 </html>
