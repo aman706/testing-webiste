@@ -397,3 +397,48 @@ section h3 {
 }
 
 
+.brands-carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  padding: 20px;
+}
+
+.brands-carousel {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 200%; /* enough to fit all items */
+}
+
+.brand-card {
+  flex: 0 0 33.33%;
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: center;
+}
+
+.brand-card img {
+  max-width: 100px;
+  margin-bottom: 10px;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.carousel-btn.left {
+  left: 0;
+}
+
+.carousel-btn.right {
+  right: 0;
+}
