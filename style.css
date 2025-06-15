@@ -1,4 +1,4 @@
-/* Google Fonts applied in HTML head */
+/* Fonts loaded in HTML head */
 
 /* Reset and Base Styles */
 * {
@@ -25,13 +25,6 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* Container */
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
 /* Top Nav */
 .top-nav {
   background-color: #004d40;
@@ -41,25 +34,48 @@ body {
   text-align: center;
 }
 
-/* Navbar */
+/* Navbar Enhanced */
 .navbar {
-  background-color: #00796b;
-  color: white;
+  background: linear-gradient(to right, #004d40, #009688, #00796b);
   padding: 1rem 0;
   text-align: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
 .navbar h1 {
   font-family: 'Playfair Display', serif;
   font-size: 2rem;
+  color: white;
 }
 
 .navbar nav a {
-  color: white;
+  color: #ffffff;
   margin: 0 1rem;
   text-decoration: none;
   font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar nav a:hover {
+  color: #c8e6c9;
+}
+
+/* About Section */
+.about-section {
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, #fffde7, #fff8e1, #f1f8e9);
+  text-align: center;
+  color: #333;
+}
+
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
 }
 
 /* Section Titles */
