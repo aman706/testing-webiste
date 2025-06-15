@@ -274,11 +274,13 @@ section h3 {
   margin: 0 auto;
 }
 
-.brands-carousel {
+..brands-carousel {
   display: flex;
-  transition: transform 0.5s ease;
-  width: calc(100% * 2); /* 2 slides (3 per slide from 6 total) */
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
+
 
 .brand-card {
   flex: 0 0 33.33%;
