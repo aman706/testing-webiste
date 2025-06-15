@@ -274,7 +274,7 @@ section h3 {
   margin: 0 auto;
 }
 
-..brands-carousel {
+.brands-carousel {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
