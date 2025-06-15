@@ -52,126 +52,32 @@ body {
 
 .navbar h1 {
   font-family: 'Playfair Display', serif;
-  margin-bottom: 0.5rem;
+  font-size: 2rem;
 }
 
-.navbar nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.navbar nav ul li a {
+.navbar nav a {
   color: white;
+  margin: 0 1rem;
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-.navbar nav ul li a:hover {
-  color: #b2dfdb;
-}
-
-/* Section Base */
-section {
-  padding: 4rem 1rem;
-  animation: fadeIn 1s ease;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Section Titles */
 .section-title {
   font-family: 'Playfair Display', serif;
-  font-size: 2.2rem;
-  color: #00695c;
+  font-size: 2rem;
+  margin-bottom: 1rem;
   text-align: center;
-  margin-bottom: 2rem;
 }
 
-/* About Section */
-.center-section {
-  background: rgba(255, 255, 255, 0.85);
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.center-section:hover {
-  transform: scale(1.02);
-}
-
-/* Services */
-#services ul {
-  list-style-type: none;
+/* Services & Products Cards */
+.cards-section {
+  padding: 4rem 1rem;
+  background-color: #f4fdfd;
   text-align: center;
-  padding: 0;
 }
 
-#services ul li {
-  padding: 0.75rem;
-  background: rgba(255, 255, 255, 0.8);
-  margin: 0.5rem auto;
-  max-width: 500px;
-  border-radius: 8px;
-  transition: transform 0.3s ease, background 0.3s ease;
-}
-
-#services ul li:hover {
-  transform: translateY(-4px);
-  background: #e0f2f1;
-}
-
-/* Contact Section */
-#contact {
-  background-color: #e8f5e9;
-  border-radius: 12px;
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 2rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-
-#contact:hover {
-  transform: scale(1.01);
-}
-
-#contact a {
-  color: #00796b;
-  text-decoration: underline;
-}
-
-#contact a:hover {
-  color: #004d40;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #004d40;
-  color: white;
-  position: relative;
-  bottom: 0;
-  width: 100%;
-}
-/* Product Section */
-.products-section {
-  background: rgba(255, 255, 255, 0.9);
-  padding: 3rem 1rem;
-  text-align: center;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.product-grid {
+.card-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -179,38 +85,27 @@ footer {
   margin-top: 2rem;
 }
 
-.product-card {
-  background-color: #ffffff;
-  border: 1px solid #e0e0e0;
-  border-radius: 10px;
-  padding: 1.5rem;
+.card {
+  background: linear-gradient(135deg, #e0f7fa, #b2dfdb);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  padding: 2rem;
   width: 280px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, background 0.5s ease;
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
-.product-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+.card:hover {
+  transform: translateY(-10px);
+  background: linear-gradient(135deg, #00bcd4, #009688, #00bcd4);
+  background-size: 200% 200%;
+  animation: cardGradientShift 4s ease infinite;
+  color: white;
 }
 
-.product-card h3 {
-  font-family: 'Playfair Display', serif;
-  color: #00796b;
-  margin-bottom: 0.5rem;
-}
-
-.product-card p {
-  font-size: 0.95rem;
-  color: #444;
-}
-section {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease;
-}
-
-section.visible {
-  opacity: 1;
-  transform: translateY(0);
+@keyframes cardGradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
