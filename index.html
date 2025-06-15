@@ -145,33 +145,38 @@
   </footer>
 
   <!-- JavaScript -->
-  <script>
-    const hamburger = document.querySelector('.hamburger');
-    const nav = document.querySelector('nav');
-    hamburger.addEventListener('click', () => {
-      nav.classList.toggle('active');
-    });
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const nav = document.querySelector('nav');
+  hamburger.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
 
-
-let currentIndex = 0;
+  let currentIndex = 0;
 
   function slideBrands(direction) {
-    const carousel = document.getElementById('brandsCarousel');
+    const carousel = document.getElementById('brandsScroll');
     const card = carousel.querySelector('.brand-card');
     const style = getComputedStyle(card);
-    const cardWidth = card.offsetWidth + parseFloat(style.marginLeft) + parseFloat(style.marginRight);
 
+    const cardWidth = card.offsetWidth + parseFloat(style.marginLeft) + parseFloat(style.marginRight);
     const visibleCards = 3;
     const totalCards = carousel.children.length;
-    const maxIndex = Math.ceil(totalCards / visibleCards) - 1;
+    const maxIndex = totalCards - visibleCards;
 
     currentIndex += direction;
-    if (currentIndex < 0) currentIndex = 0;
-    if (currentIndex > maxIndex) currentIndex = maxIndex;
 
-    const scrollX = currentIndex * cardWidth * visibleCards;
+    if (currentIndex > maxIndex) currentIndex = 0;
+    if (currentIndex < 0) currentIndex = maxIndex;
+
+    const scrollX = currentIndex * cardWidth;
     carousel.style.transform = `translateX(-${scrollX}px)`;
   }
-  </script>
+
+  // 🔁 Auto-slide every 4 seconds
+  setInterval(() => {
+    slideBrands(1);
+  }, 4000);
+</script>
 </body>
 </html>
