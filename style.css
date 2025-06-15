@@ -5,12 +5,10 @@
   font-family: 'Segoe UI', sans-serif;
 }
 
-/* Solar-themed Background */
-body {
-  background: url('images/solar-bg.jpg') no-repeat center center fixed;
+/* Solar-themed Background */ body {
+  background: url('images/solar-bg.jpg') no-repeat center center fixed; 
   background-size: cover;
 }
-/* Top Contact Bar */
 .top-bar {
   background: #004d40;
   color: white;
@@ -19,39 +17,35 @@ body {
   font-size: 0.9rem;
 }
 
-/* Logo Header */
-.logo-header {
-  background: rgba(255, 255, 255, 0.95);
-  text-align: center;
-  padding: 1rem 0;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+  padding: 1rem 2rem;
 }
 
 .logo {
-  font-size: 2rem;
-  color: #00796b;
-}
-
-/* Navbar */
-.navbar {
-  background: linear-gradient(45deg, #00c6ff, #0072ff);
-  padding: 1rem 2rem;
-  text-align: center;
-  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: white;
+  font-weight: bold;
 }
 
 .navbar nav a {
+  background: rgba(255, 255, 255, 0.1);
   color: white;
   text-decoration: none;
-  margin: 0 1rem;
-  font-size: 1rem;
-  transition: color 0.3s ease;
+  padding: 0.5rem 1rem;
+  margin: 0 0.3rem;
+  border-radius: 5px;
+  transition: 0.3s ease;
 }
 
 .navbar nav a:hover {
-  color: #ffeb3b;
+  background: #ffffff;
+  color: #0072ff;
 }
 
-/* Section Styling */
 .section {
   padding: 3rem 2rem;
   background: rgba(255, 255, 255, 0.9);
@@ -60,7 +54,8 @@ body {
 }
 
 .section-title {
-  font-size: 2rem;
+  font-size: 2.2rem;
+  font-weight: 700;
   margin-bottom: 1.5rem;
   text-align: center;
   color: #0072ff;
@@ -74,7 +69,6 @@ body {
   text-align: center;
 }
 
-/* Cards */
 .cards-section {
   padding: 3rem 2rem;
 }
@@ -87,36 +81,47 @@ body {
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.85);
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   padding: 2rem;
   width: 300px;
   transition: transform 0.3s ease;
   text-align: center;
+  color: white;
+  background-size: cover;
+  background-position: center;
 }
 
 .card:hover {
   transform: translateY(-10px);
 }
 
+.service-card {
+  background-image: url('images/service-bg.jpg');
+}
+
+.product-card {
+  background-image: url('images/product-bg.jpg');
+}
+
 .card i {
   font-size: 2.5rem;
-  color: #009688;
+  color: #ffeb3b;
   margin-bottom: 0.5rem;
 }
 
 .card h3 {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   margin: 0.5rem 0;
+  font-weight: bold;
 }
 
 .card p {
   font-size: 1rem;
-  color: #444;
+  color: #f1f1f1;
 }
 
-/* Responsive Layout */
+/* Responsive Design */
 @media (max-width: 768px) {
   .card-container {
     flex-direction: column;
@@ -127,8 +132,17 @@ body {
     width: 90%;
   }
 
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar nav {
+    margin-top: 0.5rem;
+  }
+
   .navbar nav a {
-    display: block;
-    margin: 0.5rem 0;
+    display: inline-block;
+    margin: 0.3rem 0.2rem;
   }
 }
