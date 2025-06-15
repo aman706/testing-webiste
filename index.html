@@ -152,26 +152,26 @@
       nav.classList.toggle('active');
     });
 
- <script>
-  let currentSlide = 0;
+
+let currentIndex = 0;
 
   function scrollBrands(direction) {
     const carousel = document.getElementById('brandsCarousel');
-    const cardWidth = carousel.querySelector('.brand-card').offsetWidth;
-    const gap = 40; // adjust if you use `gap` in CSS
-    const scrollAmount = (cardWidth + gap) * 3;
+    const card = carousel.querySelector('.brand-card');
+    const style = getComputedStyle(card);
+    const cardWidth = card.offsetWidth + parseFloat(style.marginLeft) + parseFloat(style.marginRight);
 
-    currentSlide += direction;
-    if (currentSlide < 0) currentSlide = 0;
-    if (currentSlide > 1) currentSlide = 1; // only 2 slides of 3 cards
+    const visibleCards = 3;
+    const totalCards = carousel.children.length;
+    const maxIndex = Math.ceil(totalCards / visibleCards) - 1;
 
-    carousel.scrollTo({
-      left: currentSlide * scrollAmount,
-      behavior: 'smooth'
-    });
+    currentIndex += direction;
+    if (currentIndex < 0) currentIndex = 0;
+    if (currentIndex > maxIndex) currentIndex = maxIndex;
+
+    const scrollX = currentIndex * cardWidth * visibleCards;
+    carousel.style.transform = `translateX(-${scrollX}px)`;
   }
-</script>
-
   </script>
 </body>
 </html>
