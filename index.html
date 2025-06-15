@@ -146,54 +146,31 @@
 
   <!-- JavaScript -->
 <script>
-  const hamburger = document.querySelector('.hamburger');
-  const nav = document.querySelector('nav');
-  hamburger.addEventListener('click', () => {
-    nav.classList.toggle('active');
+  
+  const carousel = document.getElementById('brandCarousel');
+  let isMobile = window.innerWidth <= 768;
+
+  let autoScrollInterval;
+  if (isMobile) {
+    autoScrollInterval = setInterval(() => {
+      if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth) {
+        carousel.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        carousel.scrollBy({ left: carousel.clientWidth * 0.85, behavior: 'smooth' });
+      }
+    }, 3000); // every 3 seconds
+  }
+
+  function scrollBrands(direction) {
+    const scrollAmount = 320;
+    carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+  }
+
+  // Optional: Pause auto-slide on user touch/swipe
+  carousel.addEventListener('touchstart', () => {
+    if (autoScrollInterval) clearInterval(autoScrollInterval);
   });
 
-  let currentIndex = 0;
-
-  function slideBrands(direction) {
-    const carousel = document.getElementById('brandsScroll');
-    const card = carousel.querySelector('.card');
-    const style = getComputedStyle(card);
-    const cardWidth = card.offsetWidth + parseFloat(style.marginLeft) + parseFloat(style.marginRight);
-    const visibleCards = 3;
-    const totalCards = carousel.children.length;
-    const maxIndex = totalCards - visibleCards;
-
-    currentIndex += direction;
-    if (currentIndex > maxIndex) currentIndex = 0;
-    if (currentIndex < 0) currentIndex = maxIndex;
-
-    const scrollX = currentIndex * cardWidth;
-    carousel.style.transform = `translateX(-${scrollX}px)`;
-  }
-
-  // 🟢 Mobile Auto-Slide One Card by One
-  if (window.innerWidth <= 768) {
-    const sliders = document.querySelectorAll('.card-slider');
-
-    sliders.forEach(slider => {
-      let interval = setInterval(() => {
-        const card = slider.querySelector('.card');
-        if (!card) return;
-
-        const cardWidth = card.offsetWidth + 20;
-        const maxScroll = slider.scrollWidth - slider.clientWidth;
-
-        if (slider.scrollLeft + cardWidth >= maxScroll) {
-          slider.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-          slider.scrollBy({ left: cardWidth, behavior: 'smooth' });
-        }
-      }, 4000);
-
-      // Stop auto-slide when user swipes
-      slider.addEventListener('touchstart', () => clearInterval(interval), { once: true });
-    });
-  }
 </script>
 
 </body>
