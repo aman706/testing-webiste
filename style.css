@@ -1,18 +1,25 @@
-body {
-  background: url('images/bg.jpg') no-repeat center center fixed;
-  background-size: cover;
+/* Reset */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body and Background */
+body {
   font-family: 'Segoe UI', sans-serif;
   color: #fff;
+  background: url('images/bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  overflow-x: hidden;
 }
 
 /* Top Bar */
 .top-bar {
-  background: rgba(0, 0, 0, 0.7);
-  padding: 8px 15px;
-  font-size: 14px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 8px;
   text-align: center;
+  font-size: 14px;
 }
 
 /* Navbar */
@@ -20,103 +27,115 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
-  background: rgba(0, 0, 0, 0.85);
+  background-color: rgba(10, 10, 10, 0.85);
+  padding: 10px 20px;
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
 }
 
-.logo {
+.navbar .logo {
   display: flex;
   align-items: center;
   gap: 10px;
+  color: #ffcc00;
+  font-weight: bold;
+  font-size: 1.5em;
 }
 
-.logo img {
+.navbar .logo img {
   width: 40px;
   height: 40px;
 }
 
 .navbar nav a {
-  color: white;
+  color: #fff;
   margin: 0 15px;
   text-decoration: none;
   font-weight: 500;
 }
 
-.hamburger {
+.navbar .hamburger {
   display: none;
+  color: #fff;
   font-size: 24px;
 }
 
-/* Section Titles */
+/* Section Title */
 .section-title {
-  text-align: center;
   font-size: 2rem;
-  margin-top: 40px;
-  margin-bottom: 20px;
-  color: #fdd835;
+  text-align: center;
+  margin: 40px 0 20px;
+  color: #ffcc00;
+  text-transform: uppercase;
 }
 
 /* About Section */
 .about-section {
-  padding: 20px 10%;
+  padding: 20px;
   text-align: center;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .about-text {
-  font-size: 1.1rem;
   max-width: 700px;
   margin: auto;
+  font-size: 1.1rem;
 }
 
-/* Cards Section */
+/* Cards Section Shared */
 .cards-section {
-  padding: 40px 0;
+  padding: 30px 10px;
 }
 
 .card-wrapper {
   position: relative;
-  overflow: hidden;
-  padding: 0 40px;
 }
 
-.scrollable {
+.card-container {
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
   gap: 20px;
-  padding: 20px 0;
+  padding: 20px 10px;
 }
 
-.scrollable::-webkit-scrollbar {
+.card-container::-webkit-scrollbar {
   display: none;
 }
 
 .card {
-  flex: 0 0 300px;
-  height: 420px;
+  min-width: 280px;
+  height: 360px;
+  flex: 0 0 auto;
   background-size: cover;
   background-position: center;
   border-radius: 15px;
   padding: 20px;
-  color: white;
+  color: #fff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
   text-align: center;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease;
-  backdrop-filter: blur(2px);
-}
-
-.card:hover {
-  transform: scale(1.05);
 }
 
 .card-logo {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  margin: 0 auto 10px;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 0.95rem;
+  max-width: 220px;
 }
 
 /* Scroll Buttons */
@@ -124,76 +143,84 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0,0,0,0.6);
+  background: rgba(255, 255, 255, 0.1);
   border: none;
-  color: white;
-  font-size: 1.5rem;
+  color: #fff;
   padding: 10px;
   cursor: pointer;
   z-index: 10;
+  font-size: 1.2rem;
   border-radius: 50%;
 }
 
 .left-btn {
-  left: 10px;
+  left: 0;
 }
 
 .right-btn {
-  right: 10px;
+  right: 0;
 }
 
-.scroll-btn:hover {
-  background: rgba(255,255,255,0.2);
+/* Brands Section */
+.brands-section {
+  padding: 40px 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+
+.brands-container ul {
+  list-style: none;
+  margin-top: 15px;
+}
+
+.brands-container li {
+  margin: 5px 0;
+  font-size: 1.1rem;
 }
 
 /* Contact Section */
 .contact-section {
-  padding: 40px 10%;
-  background: rgba(0, 0, 0, 0.6);
-  border-top: 1px solid rgba(255,255,255,0.2);
+  padding: 40px 20px;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .contact-container {
   display: flex;
-  justify-content: space-between;
-  gap: 30px;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
 }
 
 .contact-form {
-  flex: 1 1 45%;
   display: flex;
   flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+  width: 100%;
 }
 
 .contact-form input,
 .contact-form textarea {
-  margin-bottom: 15px;
   padding: 10px;
   border: none;
-  border-radius: 8px;
+  border-radius: 5px;
   font-size: 1rem;
 }
 
 .contact-form button {
-  padding: 12px;
-  background-color: #fdd835;
-  color: #000;
-  font-weight: bold;
+  background-color: #ffcc00;
   border: none;
-  border-radius: 8px;
+  padding: 12px;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.contact-form button:hover {
-  background-color: #fff176;
 }
 
 .contact-info {
-  flex: 1 1 45%;
+  max-width: 400px;
   font-size: 1rem;
-  line-height: 1.6;
 }
 
 /* Responsive */
@@ -201,16 +228,17 @@ body {
   .navbar nav {
     display: none;
   }
-  .hamburger {
+
+  .navbar .hamburger {
     display: block;
   }
+
   .card {
-    flex: 0 0 85%;
+    height: auto;
+    min-height: 300px;
   }
-  .card-wrapper {
-    padding: 0 10px;
-  }
-  .contact-container {
-    flex-direction: column;
+
+  .card p {
+    font-size: 0.9rem;
   }
 }
