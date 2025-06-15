@@ -66,6 +66,38 @@ nav a:hover {
   font-size: 1.5rem;
   color: #fff;
 }
+/* Default (desktop): flex wrap */
+.card-slider {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  overflow: visible;
+  scroll-snap-type: none;
+}
+
+/* Mobile version: scrollable snap carousel */
+@media (max-width: 768px) {
+  .card-slider {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 20px;
+    flex-wrap: nowrap;
+    padding-left: 10px;
+  }
+
+  .card-slider .card {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+    min-width: 280px;
+  }
+
+  .card-slider .card:hover {
+    transform: translateY(-5px);
+  }
+}
+
 
 /* Responsive Menu */
 @media (max-width: 768px) {
@@ -389,20 +421,18 @@ section h3 {
     flex: 1 1 100%;
   }
   .card-slider {
-    display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    gap: 16px;
+    gap: 20px;
     flex-wrap: nowrap;
-    padding: 0 10px;
+    padding-left: 10px;
   }
 
   .card-slider .card {
     flex: 0 0 85%;
-    min-width: 280px;
     scroll-snap-align: center;
-    transition: transform 0.3s ease;
+    min-width: 280px;
   }
 
   .card-slider .card:hover {
