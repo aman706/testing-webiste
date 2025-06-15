@@ -6,7 +6,7 @@ body {
   scroll-behavior: smooth;
   background: #f0f9ff;
 }
-/* Solar-themed Background */ body { background: url('images/solar-bg.jpg') no-repeat center center fixed; background-size: cover; }
+
 .top-bar {
   background-color: #003c3c;
   color: white;
@@ -130,13 +130,29 @@ nav a:hover {
   font-size: 2rem;
 }
 
-.sc1 { background-image: url('images/services/1.jpg'); }
-.sc2 { background-image: url('images/services/2.jpg'); }
-.sc3 { background-image: url('images/services/3.jpg'); }
+.sc1 {
+  background-image: url('images/services/1.jpg');
+}
 
-.pc1 { background-image: url('images/products/1.jpg'); }
-.pc2 { background-image: url('images/products/2.jpg'); }
-.pc3 { background-image: url('images/products/3.jpg'); }
+.sc2 {
+  background-image: url('images/services/2.jpg');
+}
+
+.sc3 {
+  background-image: url('images/services/3.jpg');
+}
+
+.pc1 {
+  background-image: url('images/products/1.jpg');
+}
+
+.pc2 {
+  background-image: url('images/products/2.jpg');
+}
+
+.pc3 {
+  background-image: url('images/products/3.jpg');
+}
 
 form {
   display: flex;
@@ -180,7 +196,6 @@ footer a {
   margin: 0 0.5rem;
 }
 
-/* Responsive */
 @media screen and (max-width: 768px) {
   .card-container {
     flex-direction: column;
