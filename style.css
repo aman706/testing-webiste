@@ -5,30 +5,47 @@
   font-family: 'Segoe UI', sans-serif;
 }
 
+/* Solar-themed Background */
 body {
-  background: url('https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+  background: url('https://images.unsplash.com/photo-1581092334903-658b4c736358?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
   background-size: cover;
   color: #222;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: linear-gradient(45deg, #00c6ff, #0072ff);
-  padding: 1rem 2rem;
+/* Top Contact Bar */
+.top-bar {
+  background: #004d40;
   color: white;
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 0.9rem;
 }
 
-.navbar .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
+/* Logo Header */
+.logo-header {
+  background: rgba(255, 255, 255, 0.95);
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.logo {
+  font-size: 2rem;
+  color: #00796b;
+}
+
+/* Navbar */
+.navbar {
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+  padding: 1rem 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 .navbar nav a {
   color: white;
   text-decoration: none;
-  margin-left: 1rem;
+  margin: 0 1rem;
+  font-size: 1rem;
   transition: color 0.3s ease;
 }
 
@@ -36,6 +53,7 @@ body {
   color: #ffeb3b;
 }
 
+/* Section Styling */
 .section {
   padding: 3rem 2rem;
   background: rgba(255, 255, 255, 0.9);
@@ -58,6 +76,7 @@ body {
   text-align: center;
 }
 
+/* Cards */
 .cards-section {
   padding: 3rem 2rem;
 }
