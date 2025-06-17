@@ -66,7 +66,8 @@ nav a:hover {
   font-size: 1.5rem;
   color: #fff;
 }
-/* Default (desktop): flex wrap */
+
+/* Default Card Slider */
 .card-slider {
   display: flex;
   justify-content: center;
@@ -75,29 +76,6 @@ nav a:hover {
   overflow: visible;
   scroll-snap-type: none;
 }
-
-/* Mobile version: scrollable snap carousel */
-@media (max-width: 768px) {
-  .card-slider {
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    gap: 20px;
-    flex-wrap: nowrap;
-    padding-left: 10px;
-  }
-
-  .card-slider .card {
-    flex: 0 0 85%;
-    scroll-snap-align: center;
-    min-width: 280px;
-  }
-
-  .card-slider .card:hover {
-    transform: translateY(-5px);
-  }
-}
-
 
 /* Responsive Menu */
 @media (max-width: 768px) {
@@ -309,16 +287,10 @@ section h3 {
 .brands-carousel {
   display: flex;
   transition: transform 0.5s ease-in-out;
+  gap: 20px;
 }
 
-.brands-carousel .card {
-  flex: 0 0 calc(33.333% - 20px); /* 3 cards per row with gap */
-  max-width: calc(33.333% - 20px);
-  margin: 10px; /* adds spacing between cards */
-}
-
-
-
+/* Brand Cards */
 .brand-card {
   min-width: 300px;
   margin: 10px;
@@ -330,6 +302,7 @@ section h3 {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
+
 .brand-card:hover {
   transform: scale(1.05);
 }
@@ -351,7 +324,7 @@ section h3 {
   line-height: 1.4;
 }
 
-/* Brand Card Backgrounds */
+/* Backgrounds for Brand Cards */
 .card.bc1 { background: url('images/brands/bg1.jpg') no-repeat center center / cover; }
 .card.bc2 { background: url('images/brands/bg2.jpg') no-repeat center center / cover; }
 .card.bc3 { background: url('images/brands/bg3.jpg') no-repeat center center / cover; }
@@ -359,7 +332,7 @@ section h3 {
 .card.bc5 { background: url('images/brands/bg5.jpg') no-repeat center center / cover; }
 .card.bc6 { background: url('images/brands/bg6.jpg') no-repeat center center / cover; }
 
-/* Carousel Scroll Buttons */
+/* Carousel Buttons */
 .carousel-btn {
   position: absolute;
   top: 40%;
@@ -380,6 +353,7 @@ section h3 {
 .carousel-btn.right {
   right: 0;
 }
+
 .brand-logo {
   width: 60px;
   height: auto;
@@ -387,7 +361,7 @@ section h3 {
   object-fit: contain;
 }
 
-/* Responsive Adjustments */
+/* Mobile-Specific Fixes */
 @media (max-width: 768px) {
   .card-container {
     flex-direction: column;
@@ -399,33 +373,6 @@ section h3 {
     max-width: 500px;
   }
 
-  .brands-carousel-wrapper {
-    overflow: visible !important;
-  }
-
-  .brands-carousel {
-    flex-direction: column;
-    overflow-x: hidden !important;
-    scroll-behavior: auto !important;
-    animation: none !important;
-    transform: none !important;
-      display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 0 10px;
-  }
-
-  .brand-card {
-    width: 100%;
-    max-width: 90%;
-    margin: 10px auto;
-  }
-   .brands-carousel .card {
-    width: 100%;
-    max-width: 90%;
-    margin: 10px 0;
-    flex: 1 1 100%;
-  }
   .card-slider {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
@@ -445,10 +392,24 @@ section h3 {
     transform: translateY(-5px);
   }
 
-  .brands-carousel-wrapper .carousel-btn {
-    display: none; /* Hide nav arrows on mobile */
+  .brands-carousel {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 20px;
+    padding: 10px;
   }
 
+  .brand-card {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+    max-width: 90%;
+    margin: 0 auto;
+  }
 
+  .brands-carousel-wrapper .carousel-btn {
+    display: none; /* Hide arrows on mobile */
+  }
 }
-
