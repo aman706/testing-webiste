@@ -380,6 +380,12 @@ section h3 {
 .carousel-btn.right {
   right: 0;
 }
+.brand-logo {
+  width: 60px;
+  height: auto;
+  margin-bottom: 10px;
+  object-fit: contain;
+}
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
